@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/style.css" />
   <title>JavaScript Fundamentals Quiz</title>
   <style>
-    
     #quiz-container {
       width: 90%;
       max-width: 500px;
       margin: auto;
     }
-    
-    input[type="radio"], label {
+
+    input[type="radio"],
+    label {
       display: block;
       margin: 10px 0;
     }
-    
+
     #score-container {
       width: 90%;
       max-width: 500px;
@@ -26,8 +27,11 @@
     }
   </style>
 </head>
+
 <body>
-  <h1>JavaScript Fundamentals Quiz</h1>
+  <header class="main-header">
+    <h1>JavaScript Fundamentals Quiz</h1>
+  </header>
   <button id="start-btn">Start Quiz</button>
   <div id="quiz-container" style="display:none;">
     <p id="question-text"></p>
@@ -53,4 +57,5 @@
   <div id="timer-container"></div>
   <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

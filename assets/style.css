@@ -3,6 +3,10 @@ body {
     background-color: #f4f4f4;
     font-family: Arial, sans-serif;
   }
+
+  .main-header {
+    color: blueviolet;
+  }
   
   /* Quiz container styles */
   #quiz-container {
