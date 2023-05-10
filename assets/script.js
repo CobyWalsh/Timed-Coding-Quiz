@@ -112,6 +112,7 @@ let playerName;
 // function to start quiz
 const startButton = document.getElementById("start-btn");
 startButton.addEventListener("click", startQuiz);
+
 function startQuiz() {
     playerName = document.getElementById("player-name").value;
     displayQuestion();
@@ -127,11 +128,11 @@ function displayQuestion() {
         // display the choices
         choices.innerHTML = "";
 
-        for (let i = 0; i < quizQuestions[currentQuestion].choices.length; i++) {
+        for (let i = 0; i < Object.keys(quizQuestions[currentQuestion].answers).length; i++) {
             let choice = document.createElement("button");
-            choice.innerText = quizQuestions[currentQuestion].choices[i];
+            choice.innerText = quizQuestions[currentQuestion].answers[Object.keys(quizQuestions[currentQuestion].answers)[i]];
             choice.setAttribute("class", "choice");
-            choice.setAttribute("value", quizQuestions[currentQuestion].choices[i]);
+            choice.setAttribute("value", Object.keys(quizQuestions[currentQuestion].answers)[i]);
             choice.setAttribute("onclick", "checkAnswer(this)");
             choices.appendChild(choice);
         }
@@ -142,11 +143,11 @@ function displayQuestion() {
 
     } else {
         // display the score
-        let quizContainer = document.getElementById("quizContainer");
+        let quizContainer = document.getElementById("quiz-container");
         quizContainer.innerHTML = "";
-        let score = document.createElement("h2");
-        score.innerText = `You scored ${score} out of ${quizQuestions.length}!`;
-        quizContainer.appendChild(score);
+        let scoreElement = document.createElement("h2");
+        scoreElement.innerText = `You scored ${score} out of ${quizQuestions.length}!`;
+        quizContainer.appendChild(scoreElement);
 
         // display the reset button
         let resetButton = document.createElement("button");
