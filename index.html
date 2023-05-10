@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/style.css" />
+  <script src="./assets/script.js"></script>
   <title>JavaScript Fundamentals Quiz</title>
   <style>
     #quiz-container {
@@ -33,8 +34,14 @@
     <h1>JavaScript Fundamentals Quiz</h1>
   </header>
   <button id="start-btn">Start Quiz</button>
-  <div id="quiz-container" style="display:none;">
-    <p id="question-text"></p>
+  <div>
+    <label for="player-name">Enter your name:</label>
+    <input type="text" id="player-name" name="player-name">
+  </div>
+  <button onclick="startQuiz()">Start Quiz</button>
+
+  <div id="choices" style="display:none;">
+    <p id="question"></p>
     <input type="radio" name="answer" value="a" id="answer-a">
     <label for="answer-a" id="label-a"></label>
     <input type="radio" name="answer" value="b" id="answer-b">
@@ -55,7 +62,6 @@
     </form>
   </div>
   <div id="timer-container"></div>
-  <script src="./assets/script.js"></script>
 </body>
 
 </html>

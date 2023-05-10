@@ -107,15 +107,52 @@ let currentQuestion = 0;
 let score = 0;
 let timeLeft = 90;
 let timerInterval;
+let playerName;
 
 // function to start quiz
+const startButton = document.getElementById("start-btn");
+startButton.addEventListener("click", startQuiz);
 function startQuiz() {
-    // hide start button and show quiz container
-    document.getElementById("start-btn").style.display = "none";
-    document.getElementById("quiz-container").style.display = "block";
+    playerName = document.getElementById("player-name").value;
+    displayQuestion();
 }
-// set timer interval to count down every second
-timerInterval = setInterval(function () {
-    timeLeft--;
-}, 1000);
 
+function displayQuestion() {
+    let choices = document.getElementById("choices");
+    if (currentQuestion < quizQuestions.length) {
+        // display the question
+        let question = document.getElementById("question")
+        question.innerHTML = quizQuestions[currentQuestion].question;
+
+        // display the choices
+        choices.innerHTML = "";
+
+        for (let i = 0; i < quizQuestions[currentQuestion].choices.length; i++) {
+            let choice = document.createElement("button");
+            choice.innerText = quizQuestions[currentQuestion].choices[i];
+            choice.setAttribute("class", "choice");
+            choice.setAttribute("value", quizQuestions[currentQuestion].choices[i]);
+            choice.setAttribute("onclick", "checkAnswer(this)");
+            choices.appendChild(choice);
+        }
+
+        // display the progress
+        let progress = document.getElementById("progress");
+        progress.innerText = `Question ${currentQuestion + 1} of ${quizQuestions.length}`;
+
+    } else {
+        // display the score
+        let quizContainer = document.getElementById("quizContainer");
+        quizContainer.innerHTML = "";
+        let score = document.createElement("h2");
+        score.innerText = `You scored ${score} out of ${quizQuestions.length}!`;
+        quizContainer.appendChild(score);
+
+        // display the reset button
+        let resetButton = document.createElement("button");
+        resetButton.innerText = "Reset";
+        resetButton.setAttribute("class", "reset");
+        resetButton.setAttribute("onclick", "resetQuiz()");
+        quizContainer.appendChild(resetButton);
+    }
+}  
