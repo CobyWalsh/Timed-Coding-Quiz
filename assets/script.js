@@ -119,11 +119,11 @@ function startQuiz() {
 }
 
 function displayQuestion() {
-    let choices = document.getElementById("choices");
+    let choices = document.getElementById("quiz-container");
     if (currentQuestion < quizQuestions.length) {
         // display the question
         let question = document.getElementById("question")
-        question.innerHTML = quizQuestions[currentQuestion].question;
+        question.innerHTML = quizQuestions[currentQuestion].answers;
 
         // display the choices
         choices.innerHTML = "";
