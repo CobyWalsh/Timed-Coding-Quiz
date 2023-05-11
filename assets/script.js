@@ -120,13 +120,17 @@ function startQuiz() {
 
 function displayQuestion() {
     let choices = document.getElementById("quiz-container");
+    choices = document.getElementById("choices");
+    choices.setAttribute("style", "display:inline")
+    //let submitButton = document.getElementById("submit-btn");
+        //submitButton.addEventListener("click", submitAnswer);
     if (currentQuestion < quizQuestions.length) {
         // display the question
         let question = document.getElementById("question")
-        question.innerHTML = quizQuestions[currentQuestion].answers;
-
-        // display the choices
-        choices.innerHTML = "";
+        question.textContent = quizQuestions[currentQuestion].question;
+        console.log(quizQuestions[currentQuestion].question)
+        // displays the choices
+        // choices.textContent = "";
 
         for (let i = 0; i < Object.keys(quizQuestions[currentQuestion].answers).length; i++) {
             let choice = document.createElement("button");
@@ -144,7 +148,7 @@ function displayQuestion() {
     } else {
         // display the score
         let quizContainer = document.getElementById("quiz-container");
-        quizContainer.innerHTML = "";
+        quizContainer.innerTextL = "";
         let scoreElement = document.createElement("h2");
         scoreElement.innerText = `You scored ${score} out of ${quizQuestions.length}!`;
         quizContainer.appendChild(scoreElement);
