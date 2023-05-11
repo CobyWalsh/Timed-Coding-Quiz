@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/style.css" />
-  <script src="./assets/script.js"></script>
   <title>JavaScript Fundamentals Quiz</title>
   <style>
     #quiz-container {
@@ -39,19 +38,11 @@
   </div>
   <button id="start-btn" onclick="startQuiz()">Start Quiz</button>
 
-  <div id="choices" style="display:none;">
+  <div id="choices" class="">
     <p id="question"></p>
-    <input type="radio" name="answer" value="a" id="answer-a">
-    <label for="answer-a" id="label-a"></label>
-    <input type="radio" name="answer" value="b" id="answer-b">
-    <label for="answer-b" id="label-b"></label>
-    <input type="radio" name="answer" value="c" id="answer-c">
-    <label for="answer-c" id="label-c"></label>
-    <input type="radio" name="answer" value="d" id="answer-d">
-    <label for="answer-d" id="label-d"></label>
     <button id="submit-btn">Submit</button>
   </div>
-  <div id="quiz-container" style="display:none;">
+  <div id="quiz-container">
     <h2>Your Score:</h2>
     <p id="score"></p>
     <form>
@@ -61,6 +52,7 @@
     </form>
   </div>
   <div id="timer-container"></div>
+  <script src="./assets/script.js"></script>
 </body>
 
 </html>
