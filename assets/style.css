@@ -9,6 +9,23 @@ body {
   text-align: center;
 }
 
+#timer-container {
+  background-color: #f0f0f0;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 25%;
+  margin: 0;
+  margin-top: 20px;
+}
+
+
 /* Quiz container styles */
 #quiz-container {
   width: 90%;
@@ -20,6 +37,7 @@ body {
   margin-top: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
+
 /*Start button styles*/
 #start-btn {
   background: linear-gradient(50deg, #ffd700, transparent);
@@ -31,12 +49,12 @@ body {
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2 ease;
 }
+
 /*Styled the start button so it would enlarge when the user hovers over the start button*/
 #start-btn:hover {
   background: linear-gradient(90deg, #ffd700, #ffd700);
   transform: scale(1.1);
 }
-
 
 /* Quiz question styles */
 #question-text {

@@ -4,6 +4,8 @@ const quizContainer = document.getElementById("quiz-container");
 const choices = document.getElementById("choices");
 const submitButton = document.getElementById("submit-btn");
 const resetButton = document.getElementById("reset-btn");
+const timerContainer = document.getElementById("timer-container");
+
 // Defines the array of quiz questions and answers as well as the object of the correct answer
 const quizQuestions = [
     {
@@ -47,6 +49,25 @@ function startQuiz() {
     buildQuiz(currentQuestion);
 }
 
+// Function to start the timer
+function startTimer() {
+    timerInterval = setInterval(function () {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        // Time's up, end the quiz
+        clearInterval(timerInterval);
+        endQuiz();
+      }
+      updateTimerDisplay();
+    }, 1000); // The timer updates every second (1000 milliseconds)
+  }
+  
+  // Function to update the timer display
+  function updateTimerDisplay() {
+    const timerContainer = document.getElementById("timer-container");
+    timerContainer.textContent = `Time Left: ${timeLeft} seconds`;
+  }
+
 // This function shows the current question and its answer choices
 function buildQuiz(curQ) {
     choices.setAttribute("style", "display:inline")
@@ -56,19 +77,19 @@ function buildQuiz(curQ) {
     if (curQ < quizQuestions.length) {
         // Shows the current question
         question.textContent = quizQuestions[curQ].question;
-    console.log("in if loop")
+        console.log("in if loop")
         // Creates buttons for each answer option for the current question
         for (let i = 0; i < quizQuestions[curQ].answers.length; i++) {
             console.log("in for loop " + i);
             let input = document.createElement("input");
-              label = document.createElement("label");
+            label = document.createElement("label");
             input.setAttribute("type", "radio");
             input.setAttribute("id", `${i}`);
             input.setAttribute("value", quizQuestions[curQ].answers[i]);
             label.innerText = quizQuestions[curQ].answers[i];
             label.setAttribute("for", `${i}`);
             choices.append(input, label);
-            
+
         }
 
     } else {
@@ -101,3 +122,4 @@ function resetQuiz() {
 startButton.addEventListener("click", startQuiz);
 submitButton.addEventListener("click", submitAnswer);
 resetButton.addEventListener("click", resetQuiz);
+startTimer.addEventListener("timer-container", startTimer);
