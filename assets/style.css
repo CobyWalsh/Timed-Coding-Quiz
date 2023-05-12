@@ -20,7 +20,7 @@ body {
   margin-top: 20px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
-
+/*Start button styles*/
 #start-btn {
   background: linear-gradient(50deg, #ffd700, transparent);
   border: none;
@@ -31,7 +31,7 @@ body {
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2 ease;
 }
-
+/*Styled the start button so it would enlarge when the user hovers over the start button*/
 #start-btn:hover {
   background: linear-gradient(90deg, #ffd700, #ffd700);
   transform: scale(1.1);
