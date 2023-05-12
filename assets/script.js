@@ -41,6 +41,7 @@ let timeLeft = 90;
 let timerInterval;
 let playerName;
 
+// This funtion starts the quiz by clicking the start button and the user enters their name
 function startQuiz() {
     playerName = document.getElementById("player-name").value;
     buildQuiz(currentQuestion);
@@ -65,7 +66,6 @@ function buildQuiz(curQ) {
             input.setAttribute("id", `${i}`);
             input.setAttribute("value", quizQuestions[curQ].answers[i]);
             label.innerText = quizQuestions[curQ].answers[i];
-            //setAttribute("type", "radio");
             label.setAttribute("for", `${i}`);
             choices.append(input, label);
             
@@ -81,6 +81,7 @@ function buildQuiz(curQ) {
     }
 }
 
+// This function presents the next question after the user clicks the submit button
 function submitAnswer() {
     console.log('You clicked the submit butotn');
     let choiceSelected = document.querySelectorAll('input[type="radio"]:checked')
@@ -89,6 +90,7 @@ function submitAnswer() {
     buildQuiz(currentQuestion + 1);
 }
 
+// This function resets the quiz after the user clicks the reset button
 function resetQuiz() {
     let resetButton = document.createElement("button");
     resetButton.innerText = "Reset";
