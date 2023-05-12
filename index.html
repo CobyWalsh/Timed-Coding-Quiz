@@ -36,19 +36,19 @@
     <label for="player-name">Enter your name:</label>
     <input type="text" id="player-name" name="player-name">
   </div>
-  <button id="start-btn" onclick="startQuiz()">Start Quiz</button>
-
-  <div id="choices" class="">
-    <p id="question"></p>
-    <button id="submit-btn">Submit</button>
+  <button id="start-btn" >Start Quiz</button>
+  <p id="question"></p>
+  <div id="choices" class="quiz-choices">
+    
   </div>
+  <button id="submit-btn">Submit</button>
   <div id="quiz-container">
     <h2>Your Score:</h2>
     <p id="score"></p>
     <form>
       <label for="initials">Enter your initials:</label>
       <input type="text" id="initials" name="initials">
-      <button type="submit" id="submit-btn">Submit</button>
+      <button class="reset" id="reset-btn">Reset</button>
     </form>
   </div>
   <div id="timer-container"></div>
