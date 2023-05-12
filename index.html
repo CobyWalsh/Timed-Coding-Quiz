@@ -5,47 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/style.css" />
+<!--This is the title of the HTML document that displays in the -->
   <title>JavaScript Fundamentals Quiz</title>
-  <style>
-    #quiz-container {
-      width: 90%;
-      max-width: 500px;
-      margin: auto;
-    }
-
-    input[type="radio"],
-    label {
-      display: block;
-      margin: 10px 0;
-    }
-
-    #score-container {
-      width: 90%;
-      max-width: 500px;
-      margin: auto;
-      text-align: center;
-    }
-  </style>
 </head>
 
 <body>
   <header class="main-header">
+    <!--This is the main heading of the webpage-->
     <h1>JavaScript Fundamentals Quiz</h1>
   </header>
   <div>
+    <!--This is the input field the input field fot the 'enter your name'text box-->
     <label for="player-name">Enter your name:</label>
     <input type="text" id="player-name" name="player-name">
   </div>
+  <!--This is the button element to start the quiz-->
   <button id="start-btn" >Start Quiz</button>
   <p id="question"></p>
   <div id="choices" class="quiz-choices">
-    
-  </div>
+    </div>
+  <!--This is the button element that submits the answer choice fot the current quiz question-->  
   <button id="submit-btn">Submit</button>
   <div id="quiz-container">
     <h2>Your Score:</h2>
     <p id="score"></p>
     <form>
+  <!--This is the label element which provides the text box for the users initials-->    
       <label for="initials">Enter your initials:</label>
       <input type="text" id="initials" name="initials">
       <button class="reset" id="reset-btn">Reset</button>
